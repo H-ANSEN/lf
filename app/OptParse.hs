@@ -31,7 +31,8 @@ pDir =
   strArgument
     (  metavar "DIRECTORY"
     <> help "the starting directory" 
-    <> value "." )
+    <> value "." 
+    <> showDefault )
 
 pAll :: Parser Bool
 pAll =
