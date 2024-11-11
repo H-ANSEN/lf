@@ -30,16 +30,15 @@ pDir :: Parser FilePath
 pDir =
   strArgument
     (  metavar "DIRECTORY"
-    <> help "the starting directory" 
+    <> help "The starting directory." 
     <> value "." 
     <> showDefault )
 
 pAll :: Parser Bool
 pAll =
   switch
-    (  long "all"
-    <> short 'a'
-    <> help "include all hidden files (dotfiles)" )
+    (  short 'a'
+    <> help "Include files and directories including hidden files." )
 
 pDepth :: Parser Natural
 pDepth =
@@ -47,6 +46,6 @@ pDepth =
     (  long "depth"
     <> short 'd'
     <> metavar "NATURAL"
-    <> help "level of directories to recurse into"
-    <> value 2
+    <> help "Descend only depth directories deep."
+    <> value 50000 -- value that should cover all cases
     )
